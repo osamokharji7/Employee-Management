@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Employee Details";
+}
+
+<head>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/EmployeeScripts.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 style="margin-left:440px;margin-top:28px;">Employee Details</h1>
+        <a class="btn btn-danger btn-sm fab" id="add_employee" style="margin-right:80px;"><span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+</div>
+
+<table class="table table-striped" style="width:1200px; margin:40px 90px 0px 90px;" id="employee_table">
+    <thead>
+        <tr class="tr">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Date of Joining</th>
+            <th></th>
+        </tr>
+    </thead>
+</table>
+<div class="modal" role="dialog" id="employee_form">
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Enter employee details</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close_form">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="first_name" placeholder="Enter first name" autocomplete="off" class="input_boxes" required/>
+                <input type="text" id="last_name" placeholder="Enter last name" autocomplete="off" class="input_boxes"required /><br />
+                <select id="designation" class="input_boxes" required>
+                </select>
+                <input type="date" id="joining_date"  autocomplete="off" class="input_boxes" required/>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="submit">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" role="dialog" id="update_form">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Change employee details</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close_update_form">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="update_id" placeholder="Enter first name" autocomplete="off" class="input_boxes" />
+
+                <input type="text" id="update_first_name" placeholder="Enter first name" autocomplete="off" class="input_boxes" required/>
+                <input type="text" id="update_last_name" placeholder="Enter last name" autocomplete="off" class="input_boxes" required/><br />
+                <select id="update_designation" class="input_boxes" required>
+                </select>
+                <input type="date" id="update_joining_date" autocomplete="off" class="input_boxes" required/>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="update_submit">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
